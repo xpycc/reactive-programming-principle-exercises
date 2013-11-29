@@ -1,8 +1,8 @@
 <p>Homework for reactive programming principles</p>
 
-<p>
-* week 1: quickcheck
-* week 2: simulations
-* week 3: nodescala
-* week 4: suggestions
-</p>
+<ul>
+<li>week 1: quickcheck</li>
+<li>week 2: simulations</li>
+<li>week 3: nodescala</li>
+<li>week 4: suggestions</li>
+</ul>
