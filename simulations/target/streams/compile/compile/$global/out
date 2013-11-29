@@ -1,0 +1,49 @@
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mInitial source changes: [0m
+[0m[[0mdebug[0m] [0m	removed:Set()[0m
+[0m[[0mdebug[0m] [0m	added: Set()[0m
+[0m[[0mdebug[0m] [0m	modified: Set(/home/ycc/exercise/reactive-programming-principles/simulations/src/main/scala/simulations/EpidemySimulator.scala)[0m
+[0m[[0mdebug[0m] [0mRemoved products: Set(/home/ycc/exercise/reactive-programming-principles/simulations/target/scala-2.10/classes/simulations/EpidemySimulator$Person$$anonfun$7.class, /home/ycc/exercise/reactive-programming-principles/simulations/target/scala-2.10/classes/simulations/EpidemySimulator$Person$$anonfun$4.class, /home/ycc/exercise/reactive-programming-principles/simulations/target/scala-2.10/classes/simulations/EpidemySimulator$$anonfun$6.class)[0m
+[0m[[0mdebug[0m] [0mModified external sources: Set()[0m
+[0m[[0mdebug[0m] [0mModified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set(/home/ycc/exercise/reactive-programming-principles/simulations/src/main/scala/simulations/EpidemySimulator.scala)[0m
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mSources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m	product: Set(/home/ycc/exercise/reactive-programming-principles/simulations/src/main/scala/simulations/EpidemySimulator.scala)[0m
+[0m[[0mdebug[0m] [0m	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m	external source: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/home/ycc/exercise/reactive-programming-principles/simulations/src/main/scala/simulations/EpidemySimulator.scala)[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source to /home/ycc/exercise/reactive-programming-principles/simulations/target/scala-2.10/classes...[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 2c957974, interfacing (CompilerInterface) with Scala compiler version 2.10.2[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-deprecation[0m
+[0m[[0mdebug[0m] [0m	-feature[0m
+[0m[[0mdebug[0m] [0m	-d[0m
+[0m[[0mdebug[0m] [0m	/home/ycc/exercise/reactive-programming-principles/simulations/target/scala-2.10/classes[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/usr/lib/jvm/java-7-sun/jre/lib/resources.jar:/usr/lib/jvm/java-7-sun/jre/lib/rt.jar:/usr/lib/jvm/java-7-sun/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-7-sun/jre/lib/jsse.jar:/usr/lib/jvm/java-7-sun/jre/lib/jce.jar:/usr/lib/jvm/java-7-sun/jre/lib/charsets.jar:/usr/lib/jvm/java-7-sun/jre/lib/jfr.jar:/usr/lib/jvm/java-7-sun/jre/classes:/home/ycc/.sbt/boot/scala-2.10.2/lib/scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/home/ycc/exercise/reactive-programming-principles/simulations/target/scala-2.10/classes:/home/ycc/exercise/reactive-programming-principles/simulations/lib_managed/jars/org.scalacheck/scalacheck_2.10/scalacheck_2.10-1.10.1.jar:/home/ycc/exercise/reactive-programming-principles/simulations/lib_managed/jars/org.scala-tools.testing/test-interface/test-interface-0.5.jar:/home/ycc/exercise/reactive-programming-principles/simulations/lib_managed/jars/org.scala-lang/scala-actors/scala-actors-2.10.1.jar[0m
+[0m[[0mdebug[0m] [0mScala compilation took 5.065265755 s[0m
+[0m[[0mdebug[0m] [0mStep 2 changed sources and immdediate dependencies:[0m
+[0m[[0mdebug[0m] [0m	Set(/home/ycc/exercise/reactive-programming-principles/simulations/src/main/scala/simulations/EpidemySimulator.scala, /home/ycc/exercise/reactive-programming-principles/simulations/src/main/scala/simulations/gui/EpidemyDisplay.scala)[0m
+[0m[[0mdebug[0m] [0mNon-trivial strongly connected components: [0m
+[0m[[0mdebug[0m] [0m	[0m
+[0m[[0mdebug[0m] [0mStep 2 invalidated sources:[0m
+[0m[[0mdebug[0m] [0m	Set(/home/ycc/exercise/reactive-programming-principles/simulations/src/main/scala/simulations/gui/EpidemyDisplay.scala, /home/ycc/exercise/reactive-programming-principles/simulations/src/main/scala/simulations/EpidemySimulator.scala)[0m
+[0m[[0minfo[0m] [0mCompiling 2 Scala sources to /home/ycc/exercise/reactive-programming-principles/simulations/target/scala-2.10/classes...[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 6838ca4b, interfacing (CompilerInterface) with Scala compiler version 2.10.2[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-deprecation[0m
+[0m[[0mdebug[0m] [0m	-feature[0m
+[0m[[0mdebug[0m] [0m	-d[0m
+[0m[[0mdebug[0m] [0m	/home/ycc/exercise/reactive-programming-principles/simulations/target/scala-2.10/classes[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/usr/lib/jvm/java-7-sun/jre/lib/resources.jar:/usr/lib/jvm/java-7-sun/jre/lib/rt.jar:/usr/lib/jvm/java-7-sun/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-7-sun/jre/lib/jsse.jar:/usr/lib/jvm/java-7-sun/jre/lib/jce.jar:/usr/lib/jvm/java-7-sun/jre/lib/charsets.jar:/usr/lib/jvm/java-7-sun/jre/lib/jfr.jar:/usr/lib/jvm/java-7-sun/jre/classes:/home/ycc/.sbt/boot/scala-2.10.2/lib/scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/home/ycc/exercise/reactive-programming-principles/simulations/target/scala-2.10/classes:/home/ycc/exercise/reactive-programming-principles/simulations/lib_managed/jars/org.scalacheck/scalacheck_2.10/scalacheck_2.10-1.10.1.jar:/home/ycc/exercise/reactive-programming-principles/simulations/lib_managed/jars/org.scala-tools.testing/test-interface/test-interface-0.5.jar:/home/ycc/exercise/reactive-programming-principles/simulations/lib_managed/jars/org.scala-lang/scala-actors/scala-actors-2.10.1.jar[0m
+[0m[[0mdebug[0m] [0mScala compilation took 5.873387781 s[0m
+[0m[[0mdebug[0m] [0mStep 3 transitive dependencies:[0m
+[0m[[0mdebug[0m] [0m	Set()[0m
+[0m[[0mdebug[0m] [0mStep 3 sources from new step 2 source dependencies:[0m
+[0m[[0mdebug[0m] [0m	Set()[0m

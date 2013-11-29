@@ -1,0 +1,50 @@
+test
+run
+compile
+test
+run
+compile
+set fork := true
+run
+compile
+run
+console
+compile
+run
+console
+styleCheck
+compile
+styleCheck
+test
+run
+console
+run
+submit allelujava@gmail.com pEMPH3pYwW
+compile
+test
+styleCheck
+run
+test
+run
+test
+submit allelujava@gmail.com pEMPH3pYwW
+styleCheck
+test
+submit allelujava@gmail.com pEMPH3pYwW
+test
+compile
+submit allelujava@gmail.com pEMPH3pYwW
+test
+run
+test
+run
+console
+submit allelujava@gmail.com cxMNJCMbnp
+test
+run
+test
+run
+test
+run
+console
+submit allelujava@gmail.com cxMNJCMbnp

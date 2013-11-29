@@ -1,0 +1,12 @@
+[0m[[0minfo[0m] [0mRunning simulations.gui.EpidemyDisplay [0m
+[0m[[0mdebug[0m] [0mStarting sandboxed run...[0m
+[0m[[0mdebug[0m] [0mWaiting for threads to exit or System.exit to be called.[0m
+[0m[[0mdebug[0m] [0m  Classpath:[0m
+[0m[[0mdebug[0m] [0m	/home/ycc/exercise/reactive-programming-principles/simulations/target/scala-2.10/classes[0m
+[0m[[0mdebug[0m] [0m	/home/ycc/.sbt/boot/scala-2.10.2/lib/scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	/home/ycc/exercise/reactive-programming-principles/simulations/lib_managed/jars/org.scalacheck/scalacheck_2.10/scalacheck_2.10-1.10.1.jar[0m
+[0m[[0mdebug[0m] [0m	/home/ycc/exercise/reactive-programming-principles/simulations/lib_managed/jars/org.scala-tools.testing/test-interface/test-interface-0.5.jar[0m
+[0m[[0mdebug[0m] [0m	/home/ycc/exercise/reactive-programming-principles/simulations/lib_managed/jars/org.scala-lang/scala-actors/scala-actors-2.10.1.jar[0m
+[0m[[0mdebug[0m] [0mWaiting for thread run-main to exit[0m
+[0m[[0mdebug[0m] [0m	Thread run-main exited.[0m
+[0m[[0mdebug[0m] [0mWaiting for thread AWT-Shutdown to exit[0m

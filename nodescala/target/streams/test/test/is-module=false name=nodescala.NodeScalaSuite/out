@@ -1,0 +1,14 @@
+[0m[[0minfo[0m] [0m[32mNodeScalaSuite:[0m[0m
+[0m[[0minfo[0m] [0m[32m- A Future should always be created[0m[0m
+[0m[[0minfo[0m] [0m[32m- A Future should never be created[0m[0m
+[0m[[0minfo[0m] [0m[32m- FutureCompanionOps.all test[0m[0m
+[0m[[0minfo[0m] [0m[32m- FutureCompanionOps.any test[0m[0m
+[0m[[0minfo[0m] [0m[32m- FutureCompanionOps.delay test[0m[0m
+[0m[[0minfo[0m] [0m[32m- FutureOps.now test[0m[0m
+[0m[[0minfo[0m] [0m[32m- FutureOps.continueWith test[0m[0m
+[0m[[0minfo[0m] [0m[32m- FutureOps.continue test[0m[0m
+[0m[[0minfo[0m] [0m[32m- CancellationTokenSource should allow stopping the computation[0m[0m
+[0m[[0minfo[0m] [0m[32m- FutureCompanionOps.run test[0m[0m
+[0m[[0minfo[0m] [0m[32m- Listener should serve the next request as a future[0m[0m
+[0m[[0minfo[0m] [0m[32m- Server should serve requests[0m[0m
+[0m[[0minfo[0m] [0m[32m- infinite running cancellation[0m[0m
