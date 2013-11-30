@@ -28,6 +28,8 @@
 [0m[[0mdebug[0m] [0m	/home/ycc/exercise/reactive-programming-principles/nodescala/lib_managed/bundles/org.scala-lang.modules/scala-async_2.10/scala-async_2.10-0.9.0-M2.jar[0m
 [0m[[0mdebug[0m] [0mWaiting for thread run-main to exit[0m
 [0m[[0mdebug[0m] [0m	Thread run-main exited.[0m
+[0m[[0mdebug[0m] [0mWaiting for thread Thread-3 to exit[0m
+[0m[[0mdebug[0m] [0m	Thread Thread-3 exited.[0m
 [0m[[0mdebug[0m] [0mWaiting for thread pool-8-thread-1 to exit[0m
 [0m[[0mdebug[0m] [0m	Thread pool-8-thread-1 exited.[0m
 [0m[[0mdebug[0m] [0mInterrupting remaining threads (should be all daemons).[0m

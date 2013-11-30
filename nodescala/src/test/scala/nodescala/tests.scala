@@ -45,8 +45,8 @@ class NodeScalaSuite extends FunSuite {
       Await.result(Future.all(ys), 30 seconds)
       assert(false)
     } catch {
-      case e: RuntimeException =>
-        if (e.getMessage() != "One of fs failed." || e.getCause().getMessage() != "my goal")
+      case e: NoSuchElementException =>
+        if (e.getMessage() != "my goal")
           assert(false)
         // else ok
       // otherwise do not catch

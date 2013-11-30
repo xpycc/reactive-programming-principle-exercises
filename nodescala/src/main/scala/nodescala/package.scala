@@ -42,21 +42,10 @@ package object nodescala {
      *  The values in the list are in the same order as corresponding futures `fs`.
      *  If any of the futures `fs` fails, the resulting future also fails.
      */
-    def all[T](fs: List[Future[T]]): Future[List[T]] = {
-      val p = Promise[List[T]]()
-      fs foreach {
-        f => f onComplete {
-          case Failure(e) => p.failure(new RuntimeException("One of fs failed.", e))
-          case Success(_) =>
-        }
-      }
-      val t = (fs foldRight Future(Nil: List[T])) {
+    def all[T](fs: List[Future[T]]): Future[List[T]] = {  // exactly the same as sequence
+      (fs foldRight Future(Nil: List[T])) {
         (f, acc) => for {x <- f; xs <- acc} yield x :: xs
       }
-      t.onComplete( { case tryValue => p.tryComplete(tryValue) } )
-        // `p.tryComplete' must be called after `p.failure' here
-        // so there is no need to write `p.tryFailure'
-      p.future
     }
 
     /** Given a list of futures `fs`, returns the future holding the value of the future from `fs` that completed first.
