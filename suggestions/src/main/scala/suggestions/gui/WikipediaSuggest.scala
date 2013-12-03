@@ -16,6 +16,9 @@ import rx.lang.scala.Observable
 import rx.lang.scala.Subscription
 import observablex._
 import search._
+import scala.async.Async
+import rx.lang.scala.subjects.AsyncSubject
+import org.jboss.netty.channel.SucceededChannelFuture
 
 object WikipediaSuggest extends SimpleSwingApplication with ConcreteSwingApi with ConcreteWikipediaApi {
 
@@ -81,10 +84,19 @@ object WikipediaSuggest extends SimpleSwingApplication with ConcreteSwingApi wit
      */
 
     // TO IMPLEMENT
-    val searchTerms: Observable[String] = ???
+    val searchTerms: Observable[String] = searchTermField.textValues.sanitized
 
     // TO IMPLEMENT
-    val suggestions: Observable[Try[List[String]]] = ???
+    val suggestions: Observable[Try[List[String]]] = searchTerms.concatRecovered(
+      terms => {
+        val subject = AsyncSubject[List[String]]()
+        wikipediaSuggestion(terms).onComplete({
+          case Failure(e) => subject.onError(e)
+          case Success(x) => subject.onNext(x); subject.onCompleted() 
+        })
+        subject
+      }
+    )
 
 
     // TO IMPLEMENT

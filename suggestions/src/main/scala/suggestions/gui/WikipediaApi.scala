@@ -15,6 +15,7 @@ import rx.lang.scala.Observable
 import rx.lang.scala.Notification.{ OnNext, OnError, OnCompleted }
 import observablex._
 import search._
+import rx.lang.scala.Subscription
 
 trait WikipediaApi {
 
@@ -51,7 +52,10 @@ trait WikipediaApi {
      *
      * E.g. `1, 2, 3, !Exception!` should become `Success(1), Success(2), Success(3), Failure(Exception), !TerminateStream!`
      */
-    def recovered: Observable[Try[T]] = obs.materialize.map({
+    def recovered: Observable[Try[T]] = obs.materialize.filter{
+      case OnCompleted() => false
+      case _ => true
+    }.map({
       case OnNext(t)   => Success(t)
       case OnError(e)  => Failure(e)
     })
@@ -62,8 +66,13 @@ trait WikipediaApi {
      *
      * Note: uses the existing combinators on observables.
      */
-    def timedOut(totalSec: Long): Observable[T] =
-      obs merge Observable.interval(totalSec seconds).take(0).map(_ => throw new Exception("Never reached!"))
+    def timedOut(totalSec: Long): Observable[T] = {
+      val rs = ReplaySubject[T]()
+      val sub = obs.subscribe(t => rs.onNext(t), e => rs.onError(e), () => rs.onCompleted())
+      val f = Future(Thread.sleep(totalSec * 1000))
+      f.onComplete{ _ => rs.onCompleted(); sub.unsubscribe() }
+      rs
+    }
 
 
     /** Given a stream of events `obs` and a method `requestMethod` to map a request `T` into

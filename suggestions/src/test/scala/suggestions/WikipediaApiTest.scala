@@ -7,12 +7,13 @@ import scala.concurrent._
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.util.{Try, Success, Failure}
+import rx.lang.scala.subjects._
 import rx.lang.scala._
 import org.scalatest._
 import gui._
-
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
+import rx.lang.scala.subjects.ReplaySubject
 
 
 @RunWith(classOf[JUnitRunner])
@@ -65,8 +66,12 @@ class WikipediaApiTest extends FunSuite {
     val sub = sum.subscribe {
       s => total = s
     }
-//    println(requests.map(t => Observable(0 to t)).flatten.toBlockingObservable.toList)
-    println(requests.toBlockingObservable.toList)
     assert(total == (1 + 1 + 2 + 1 + 2 + 3), s"Sum: $total")
+  }
+  
+  test("WikipediaApi.ObservableOps.timedOut test") {
+    val rs = Observable.interval(0.3 second)
+    val req = rs.timedOut(1)
+    assert(req.toBlockingObservable.toList == List(0, 1, 2), req)
   }
 }
