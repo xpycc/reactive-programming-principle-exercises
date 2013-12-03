@@ -65,6 +65,8 @@ class WikipediaApiTest extends FunSuite {
     val sub = sum.subscribe {
       s => total = s
     }
+//    println(requests.map(t => Observable(0 to t)).flatten.toBlockingObservable.toList)
+    println(requests.toBlockingObservable.toList)
     assert(total == (1 + 1 + 2 + 1 + 2 + 3), s"Sum: $total")
   }
 }
