@@ -66,7 +66,9 @@ trait WikipediaApi {
      *
      * Note: uses the existing combinators on observables.
      */
-    def timedOut(totalSec: Long): Observable[T] = {
+    def timedOut(totalSec: Long): Observable[T] =
+//      Observable.interval(totalSec seconds).map(_ => throw new TimeoutException("Request time out!")) merge obs
+    {
       val rs = ReplaySubject[T]()
       val sub = obs.subscribe(t => rs.onNext(t), e => rs.onError(e), () => rs.onCompleted())
       val f = Future(Thread.sleep(totalSec * 1000))

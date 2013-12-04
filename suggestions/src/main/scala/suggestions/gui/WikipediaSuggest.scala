@@ -88,31 +88,55 @@ object WikipediaSuggest extends SimpleSwingApplication with ConcreteSwingApi wit
 
     // TO IMPLEMENT
     val suggestions: Observable[Try[List[String]]] = searchTerms.concatRecovered(
-      terms => {
+      term => {
         val subject = AsyncSubject[List[String]]()
-        wikipediaSuggestion(terms).onComplete({
+        wikipediaSuggestion(term).onComplete({
           case Failure(e) => subject.onError(e)
           case Success(x) => subject.onNext(x); subject.onCompleted() 
         })
-        subject
+        subject.timedOut(3)
       }
     )
 
 
     // TO IMPLEMENT
     val suggestionSubscription: Subscription =  suggestions.observeOn(eventScheduler) subscribe {
-      x => ???
+      x => x match {
+        case Success(xs) => suggestionList.listData = xs//; status.text = ""
+        case Failure(e)  => status.text = e.getMessage()
+      }
     }
 
     // TO IMPLEMENT
-    val selections: Observable[String] = ???
-
+    val selections: Observable[String] = button.clicks.map(_ => {
+        if (!suggestionList.selection.items.isEmpty)
+          suggestionList.selection.items(0)
+        else if (!suggestionList.listData.isEmpty)
+          suggestionList.listData(0)
+        else
+          ""
+//        searchTermField.text
+      }
+    ).sanitized
+    
     // TO IMPLEMENT
-    val pages: Observable[Try[String]] = ???
+    val pages: Observable[Try[String]] = selections.concatRecovered(
+      term => {
+        val subject = AsyncSubject[String]()
+        wikipediaPage(term).onComplete({
+          case Failure(e) => subject.onError(e)
+          case Success(x) => subject.onNext(x); subject.onCompleted() 
+        })
+        subject.timedOut(10)
+      }
+    )
 
     // TO IMPLEMENT
     val pageSubscription: Subscription = pages.observeOn(eventScheduler) subscribe {
-      x => ???
+      x => x match {
+        case Success(xs) => editorpane.text = xs//; status.text = ""
+        case Failure(e)  => status.text = e.getMessage()
+      }
     }
 
   }

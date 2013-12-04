@@ -56,6 +56,7 @@ trait SwingApi {
       val subject = ReplaySubject[String]()
       field subscribe {
         case ValueChanged(x) => subject.onNext(x.text)
+        case _ =>
       }
       subject
     }
@@ -73,6 +74,7 @@ trait SwingApi {
       val subject = ReplaySubject[Button]()
       button subscribe {
         case ButtonClicked(x) => subject.onNext(x)
+        case _ =>
       }
       subject
     }
