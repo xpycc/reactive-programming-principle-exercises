@@ -114,8 +114,7 @@ object WikipediaSuggest extends SimpleSwingApplication with ConcreteSwingApi wit
         else if (!suggestionList.listData.isEmpty)
           suggestionList.listData(0)
         else
-          ""
-//        searchTermField.text
+          searchTermField.text
       }
     ).sanitized
     

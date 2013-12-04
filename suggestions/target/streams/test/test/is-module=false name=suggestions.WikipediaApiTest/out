@@ -1,5 +1,4 @@
 [0m[[0minfo[0m] [0m[32mWikipediaApiTest:[0m[0m
 [0m[[0minfo[0m] [0m[32m- WikipediaApi should make the stream valid using sanitized[0m[0m
 [0m[[0minfo[0m] [0m[32m- WikipediaApi should correctly use concatRecovered[0m[0m
-[0m[[0minfo[0m] [0m[31m- WikipediaApi.ObservableOps.timedOut test *** FAILED ***[0m[0m
-[0m[[0minfo[0m] [0m[31m  "[]" did not equal "[Request time out!]" (WikipediaApiTest.scala:80)[0m[0m
+[0m[[0minfo[0m] [0m[32m- WikipediaApi.ObservableOps.timedOut test[0m[0m

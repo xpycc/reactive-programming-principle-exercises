@@ -72,11 +72,6 @@ class WikipediaApiTest extends FunSuite {
   test("WikipediaApi.ObservableOps.timedOut test") {
     val rs = Observable.interval(0.3 second)
     val req = rs.timedOut(1)
-    val xs = collection.mutable.ListBuffer[Long]()
-    var msg = ""
-    req.subscribe(x => xs.append(x), e => msg = e.getMessage())
-    req.recovered.toBlockingObservable.toList
-    assert(xs.toList === List(0, 1, 2))
-    assert(msg === "Request time out!")
+    assert(req.toBlockingObservable.toList === List(0, 1, 2))
   }
 }

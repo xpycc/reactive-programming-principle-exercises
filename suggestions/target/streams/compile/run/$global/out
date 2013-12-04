@@ -31,10 +31,10 @@
 [0m[[0mdebug[0m] [0m	/home/ycc/exercise/reactive-programming-principles/suggestions/lib_managed/bundles/com.typesafe.akka/akka-testkit_2.10/akka-testkit_2.10-2.2.3.jar[0m
 [0m[[0mdebug[0m] [0mWaiting for thread run-main to exit[0m
 [0m[[0mdebug[0m] [0m	Thread run-main exited.[0m
-[0m[[0mdebug[0m] [0mWaiting for thread AWT-EventQueue-0 to exit[0m
-[0m[[0mdebug[0m] [0m	Thread AWT-EventQueue-0 exited.[0m
 [0m[[0mdebug[0m] [0mWaiting for thread AWT-Shutdown to exit[0m
 [0m[[0mdebug[0m] [0m	Thread AWT-Shutdown exited.[0m
+[0m[[0mdebug[0m] [0mWaiting for thread AWT-EventQueue-0 to exit[0m
+[0m[[0mdebug[0m] [0m	Thread AWT-EventQueue-0 exited.[0m
 [0m[[0mdebug[0m] [0mInterrupting remaining threads (should be all daemons).[0m
 [0m[[0mdebug[0m] [0mSandboxed run complete..[0m
 [0m[[0mdebug[0m] [0mExited with code 0[0m
