@@ -66,15 +66,15 @@ trait WikipediaApi {
      *
      * Note: uses the existing combinators on observables.
      */
-    def timedOut(totalSec: Long): Observable[T] =
+    def timedOut(totalSec: Long): Observable[T] = obs.takeUntil(Observable.interval(totalSec seconds))
 //      Observable.interval(totalSec seconds).take(1).map(???) merge obs   HOW???
-    {
-      val rs = ReplaySubject[T]()
-      val sub = obs.subscribe(t => rs.onNext(t), e => rs.onError(e), () => rs.onCompleted())
-      val f = Future(Thread.sleep(totalSec * 1000))
-      f.onComplete{ _ => rs.onCompleted(); sub.unsubscribe() }
-      rs
-    }
+//    {
+//      val rs = ReplaySubject[T]()
+//      val sub = obs.subscribe(t => rs.onNext(t), e => rs.onError(e), () => rs.onCompleted())
+//      val f = Future(Thread.sleep(totalSec * 1000))
+//      f.onComplete{ _ => rs.onCompleted(); sub.unsubscribe() }
+//      rs
+//    }
 
 
     /** Given a stream of events `obs` and a method `requestMethod` to map a request `T` into
