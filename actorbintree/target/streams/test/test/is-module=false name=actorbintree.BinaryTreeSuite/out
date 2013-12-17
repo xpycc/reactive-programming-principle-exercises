@@ -1,7 +1,4 @@
 [0m[[0minfo[0m] [0m[32mBinaryTreeSuite:[0m[0m
 [0m[[0minfo[0m] [0m[32m- proper inserts and lookups[0m[0m
-[0m[[0minfo[0m] [0m[31m- instruction example *** FAILED ***[0m[0m
-[0m[[0minfo[0m] [0m[31m  unexpected replies:[0m[0m
-[0m[[0minfo[0m] [0m[31m    at index 4: got ContainsResult(80,true), expected ContainsResult(80,false) (BinaryTreeSuite.scala:35)[0m[0m
-[0m[[0minfo[0m] [0m[31m- behave identically to built-in set (includes GC) *** FAILED ***[0m[0m
-[0m[[0minfo[0m] [0m[31m  failure to receive confirmation 3/1000 (BinaryTreeSuite.scala:29)[0m[0m
+[0m[[0minfo[0m] [0m[32m- instruction example[0m[0m
+[0m[[0minfo[0m] [0m[32m- behave identically to built-in set (includes GC)[0m[0m

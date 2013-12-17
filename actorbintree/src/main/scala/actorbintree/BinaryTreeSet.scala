@@ -86,9 +86,11 @@ class BinaryTreeSet extends Actor {
     case GC          =>
       // do nothing
     case CopyFinished   =>
-      if (pendingQueue.isEmpty) {
+      if (root != newRoot) {
         root ! PoisonPill
         root = newRoot
+      }
+      if (pendingQueue.isEmpty) {
         context.become(normal)
       } else {
         val (op, q) = pendingQueue.dequeue
@@ -173,12 +175,9 @@ class BinaryTreeNode(val elem: Int, initiallyRemoved: Boolean) extends Actor {
       }
     case CopyTo(newRoot) =>
       val sub = subtrees.values
-      if (!removed) {
-        context.become(copying(sub.toSet, false))
+      context.become(copying(sub.toSet, removed))
+      if (!removed)
         newRoot ! Insert(self, -1, elem)
-      } else {
-        context.become(copying(sub.toSet, true))
-      }
       sub foreach { _ ! CopyTo(newRoot) }
   }
 
@@ -187,7 +186,7 @@ class BinaryTreeNode(val elem: Int, initiallyRemoved: Boolean) extends Actor {
     * `insertConfirmed` tracks whether the copy of this node to the new tree has been confirmed.
     */
   def copying(expected: Set[ActorRef], insertConfirmed: Boolean): Receive = {
-    case OperationFinished(_) =>
+    case _: OperationFinished =>
       if (expected.isEmpty) {	// stop
         context.parent ! CopyFinished
         context.become(normal)
