@@ -86,20 +86,26 @@ class BinaryTreeSet extends Actor {
     case GC          =>
       // do nothing
     case CopyFinished   =>
-      if (root != newRoot) {
-        root ! PoisonPill
-        root = newRoot
+      root ! PoisonPill           // simpler solution
+      root = newRoot
+      pendingQueue foreach { op =>
+        root ! op
       }
-      if (pendingQueue.isEmpty) {
-        context.become(normal)
-      } else {
-        val (op, q) = pendingQueue.dequeue
-        pendingQueue = q
-        newRoot ! op
-        self ! CopyFinished
-      }
+      pendingQueue = Queue.empty[Operation]
+      context.become(normal)
+//      if (root != newRoot) {    // more responsive solution
+//        root ! PoisonPill
+//        root = newRoot
+//      }
+//      if (pendingQueue.isEmpty) {
+//        context.become(normal)
+//      } else {
+//        val (op, q) = pendingQueue.dequeue
+//        pendingQueue = q
+//        newRoot ! op
+//        self ! CopyFinished
+//      }
   }
-
 }
 
 object BinaryTreeNode {
@@ -175,10 +181,14 @@ class BinaryTreeNode(val elem: Int, initiallyRemoved: Boolean) extends Actor {
       }
     case CopyTo(newRoot) =>
       val sub = subtrees.values
-      context.become(copying(sub.toSet, removed))
-      if (!removed)
-        newRoot ! Insert(self, -1, elem)
-      sub foreach { _ ! CopyTo(newRoot) }
+      if (sub.isEmpty && removed) {
+        context.parent ! CopyFinished
+      } else {
+        context.become(copying(sub.toSet, removed))
+        if (!removed)
+          newRoot ! Insert(self, -1, elem)
+        sub foreach { _ ! CopyTo(newRoot) }
+      }
   }
 
   // optional
