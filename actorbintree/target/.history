@@ -17,3 +17,7 @@ test
 submit allelujava@gmail.com RghBk77K6k
 version
 sbt-version
+ls
+run
+test
+exit
