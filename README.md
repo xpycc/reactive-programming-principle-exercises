@@ -6,5 +6,7 @@
 <li>week 3 nodescala    :   finished</li>
 <li>week 4 suggestions  :   finished</li>
 <li>week 5 actorbintree :   finished</li>
-<li>week 6 kvstore		:	to do</li>
+<li>week 6 kvstore		:	finished</li>
 </ul>
+
+All assignments have been done.

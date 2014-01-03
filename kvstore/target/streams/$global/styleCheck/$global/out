@@ -1,0 +1,12 @@
+[0m[[0minfo[0m] [0mChecking file /home/ycc/exercise/reactive-programming-principles/kvstore/src/main/scala/common/package.scala... OK![0m
+[0m[[0minfo[0m] [0mChecking file /home/ycc/exercise/reactive-programming-principles/kvstore/src/main/scala/kvstore/Arbiter.scala... OK![0m
+[0m[[0minfo[0m] [0mChecking file /home/ycc/exercise/reactive-programming-principles/kvstore/src/main/scala/kvstore/Replicator.scala... OK![0m
+[0m[[0minfo[0m] [0mChecking file /home/ycc/exercise/reactive-programming-principles/kvstore/src/main/scala/kvstore/Replica.scala...[0m
+[0m[[0minfo[0m] [0m  1. warning at line 112 character 6:[0m
+[0m[[0minfo[0m] [0m     Cyclomatic complexity exceeds 10[0m
+[0m[[0minfo[0m] [0mChecking file /home/ycc/exercise/reactive-programming-principles/kvstore/src/main/scala/kvstore/Persistence.scala... OK![0m
+[0m[[0minfo[0m] [0mProcessed 5 file(s)[0m
+[0m[[0minfo[0m] [0mFound 0 errors[0m
+[0m[[0minfo[0m] [0mFound 1 warnings[0m
+[0m[[0minfo[0m] [0mConsult the style guide at https://class.coursera.org/progfun-003/wiki/view?page=GradingPolicy[0m
+[0m[[0minfo[0m] [0mStyle Score: 99 out of 100[0m
